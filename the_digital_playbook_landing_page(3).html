@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Digital Playbook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#050505',
+                            card: '#111111',
+                            green: '#39FF14',
+                            blue: '#00F0FF',
+                            pink: '#FF007F'
+                        }
+                    },
+                    animation: {
+                        'glow-pulse': 'glow 3s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 10px rgba(57, 255, 20, 0.2)' },
+                            '100%': { boxShadow: '0 0 30px rgba(57, 255, 20, 0.6)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(0, 240, 255, 0.05), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(255, 0, 127, 0.05), transparent 25%);
+        }
+        
+        .neon-border-green {
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            box-shadow: inset 0 0 20px rgba(57, 255, 20, 0.05), 0 0 20px rgba(57, 255, 20, 0.05);
+        }
+        
+        .neon-text-pink {
+            text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+        }
+        
+        .neon-text-blue {
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
+
+        .pdf-mockup {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            position: relative;
+            transform-style: preserve-3d;
+            transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
+            transition: transform 0.5s ease;
+        }
+
+        .pdf-mockup:hover {
+            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg) translateY(-10px);
+        }
+
+        .pdf-mockup::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border: 2px solid #39FF14;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+            border-radius: 8px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="text-slate-300 font-sans antialiased overflow-x-hidden selection:bg-brand-pink selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="container mx-auto px-6 py-6 flex justify-between items-center relative z-10">
+        <div class="text-2xl font-black text-white tracking-tighter">
+            THE<span class="text-brand-green">PLAYBOOK</span>
+        </div>
+        <a href="https://zooedu.gumroad.com/l/tioyor?wanted=true" target="_blank" rel="noopener noreferrer" class="hidden md:inline-block px-5 py-2 text-sm font-bold uppercase tracking-wider text-brand-dark bg-brand-green rounded hover:bg-white hover:text-black transition-colors duration-300 neon-border-green shadow-[0_0_15px_rgba(57,255,20,0.5)]">
+            Get Instant Access
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            
+            <!-- Left: Copy -->
+            <div class="space-y-8 z-10 relative">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-blue/30 bg-brand-blue/10 text-brand-blue text-xs font-bold uppercase tracking-widest">
+                    <span class="w-2 h-2 rounded-full bg-brand-blue animate-pulse"></span>
+                    No 100-page courses.
+                </div>
+                
+                <h1 class="text-5xl lg:text-7xl font-black text-white leading-[1.1] tracking-tight">
+                    I built a scalable business with <br>
+                    <span class="text-brand-pink neon-text-pink italic">Just a PDF.</span>
+                </h1>
+                
+                <p class="text-lg text-slate-400 max-w-xl leading-relaxed">
+                    Stop overcomplicating your digital product launch. The Digital Playbook is the exact, stripped-down blueprint to create, host, and sell a high-converting guide completely faceless.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="https://zooedu.gumroad.com/l/tioyor?wanted=true" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center px-8 py-4 text-lg font-black uppercase tracking-wider text-brand-dark bg-brand-green rounded hover:scale-105 transition-transform duration-300 shadow-[0_0_25px_rgba(57,255,20,0.6)]">
+                        Grab the PDF Now
+                    </a>
+                    <a href="#steps" class="inline-flex justify-center items-center px-8 py-4 text-lg font-bold text-white bg-transparent border border-slate-700 hover:border-slate-500 rounded transition-colors duration-300">
+                        See the System
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right: Mockup -->
+            <div class="relative z-10 mx-auto w-full max-w-md lg:max-w-none flex justify-center perspective-1000">
+                <div class="absolute inset-0 bg-brand-green/20 blur-[100px] rounded-full z-0"></div>
+                
+                <div class="pdf-mockup w-full max-w-[340px] aspect-[1/1.4] rounded-lg p-8 flex flex-col justify-between z-10">
+                    <div class="space-y-4">
+                        <div class="text-xs font-bold text-brand-green tracking-widest uppercase">Version 2.0</div>
+                        <h2 class="text-4xl font-black text-white leading-none uppercase">The Digital<br>Playbook</h2>
+                        <div class="w-12 h-1 bg-brand-blue mt-4"></div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <p class="text-sm font-semibold text-slate-300">The minimalist framework for maximum digital revenue.</p>
+                        <div class="flex items-center gap-3 border-t border-slate-800 pt-4">
+                            <div class="w-8 h-8 rounded bg-brand-card flex items-center justify-center border border-brand-pink/50">
+                                <svg class="w-4 h-4 text-brand-pink" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/></svg>
+                            </div>
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Instant Download</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="steps" class="py-24 bg-brand-card relative border-y border-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto mb-16 space-y-6">
+                <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight text-center mb-8">
+                    <span class="text-brand-blue neon-text-blue">The Story:</span> From Unpaid Bills to Autopilot Income
+                </h2>
+                <div class="bg-brand-dark p-8 md:p-10 border border-slate-800 hover:border-brand-blue/30 transition-colors duration-300 rounded-xl relative shadow-lg">
+                    <div class="absolute -top-6 left-4 text-7xl text-brand-blue opacity-30 font-serif">"</div>
+                    <p class="text-lg text-slate-300 leading-relaxed relative z-10 mb-4">
+                        A year ago, I was staring at my phone screen, dreading the notification from my bank. Rent was due, bills were piling up, and my 9-to-5 paycheck was vanishing instantly. I needed a way to make extra income without spending money on ads or spending months building a complex course.
+                    </p>
+                    <p class="text-lg text-slate-300 leading-relaxed relative z-10 mb-4">
+                        I decided to package what I knew into a simple 10-page PDF. No fancy software, no camera equipment—just pure, actionable value.
+                    </p>
+                    <p class="text-lg text-brand-green font-bold leading-relaxed relative z-10">
+                        Within days, sales notifications started pinging my phone. First enough to cover groceries, then my car payment, and soon, my entire rent. This isn't just about making money online; it's about building a system that pays your bills on autopilot so you can finally breathe again.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="cta" class="py-32 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[400px] bg-brand-pink/10 blur-[120px] rounded-full -z-10"></div>
+        
+        <div class="container mx-auto px-6 text-center z-10 relative">
+            <h2 class="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
+                Ready to launch your <br>digital empire?
+            </h2>
+            <p class="text-xl text-slate-400 mb-10 max-w-xl mx-auto">
+                Download the exact framework. Stop researching, start executing. It's really just a PDF.
+            </p>
+            
+            <a href="https://zooedu.gumroad.com/l/tioyor?wanted=true" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center px-10 py-5 text-xl font-black uppercase tracking-widest text-brand-dark bg-brand-green rounded hover:bg-white transition-all duration-300 shadow-[0_0_30px_rgba(57,255,20,0.5)] hover:shadow-[0_0_50px_rgba(255,255,255,0.8)] hover:scale-105">
+                Get Instant Access
+            </a>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-900 bg-brand-dark py-8">
+        <div class="container mx-auto px-6 text-center text-sm font-medium text-slate-600">
+            <p>&copy; 2026 The Digital Playbook. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Smooth Scrolling Script -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
